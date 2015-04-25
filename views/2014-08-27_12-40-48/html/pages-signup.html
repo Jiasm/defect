@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ie"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Sign Up - PixelAdmin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+	
+	<link href="googlefont.css" rel="stylesheet" type="text/css">
+
+	<!-- 样式表 -->
+	<link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/stylesheets/pixel-admin.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/stylesheets/pages.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/stylesheets/rtl.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/stylesheets/themes.min.css" rel="stylesheet" type="text/css">
+	<script src="jQuery.js"></script>
+	<!--[if lt IE 9]>
+		<script src="assets/javascripts/ie.min.js"></script>
+	<![endif]-->
+
+
+</head>
+<body class="theme-default page-signup">
+
+
+
+	<!-- 页面背景图 -->
+	<div id="page-signup-bg">
+		<!-- 遮罩层 -->
+		<div class="overlay"></div>
+		<img src="assets/demo/signin-bg-1.jpg" alt="">
+	</div>
+	<!-- / 页面背景图 -->
+
+	<!-- 内容容器 -->
+	<div class="signup-container">
+		<!-- 内容头部 -->
+		<div class="signup-header">
+			<a href="index.html" class="logo">
+				<img src="assets/demo/logo-big.png" alt="" style="margin-top: -5px;">&nbsp;
+				bug管理平台
+			</a> <!-- / 标志 -->
+			<div class="slogan">
+				简单. 易用. 开源.
+			</div> <!-- / 口号 -->
+		</div>
+		<!-- / 内容头部 -->
+
+		<!-- 表单 -->
+		<div class="signup-form">
+			<form action="index.html" id="signup-form_id">
+				
+				<div class="signup-text">
+					<span>创建用户</span>
+				</div>
+
+				<div class="form-group w-icon">
+					<input type="text" name="signup_name" id="name_id" class="form-control input-lg" placeholder="真实姓名">
+					<span class="fa fa-info signup-form-icon"></span>
+				</div>
+
+				<div class="form-group w-icon">
+					<input type="text" name="signup_email" id="email_id" class="form-control input-lg" placeholder="邮箱">
+					<span class="fa fa-envelope signup-form-icon"></span>
+				</div>
+
+				<div class="form-group w-icon">
+					<input type="text" name="signup_username" id="username_id" class="form-control input-lg" placeholder="用户名">
+					<span class="fa fa-user signup-form-icon"></span>
+				</div>
+
+				<div class="form-group w-icon">
+					<input type="password" name="signup_password" id="password_id" class="form-control input-lg" placeholder="密码">
+					<span class="fa fa-lock signup-form-icon"></span>
+				</div>
+
+				<div class="form-group" style="margin-top: 20px;margin-bottom: 20px;">
+					<label class="checkbox-inline">
+						<input type="checkbox" name="signup_confirm" class="px" id="confirm_id">
+						<span class="lbl">我同意 <a href="http://www.gov.cn/zhengce/2014-03/21/content_2643049.htm" target="_blank">该协议0.0</a></span>
+					</label>
+				</div>
+
+				<div class="form-actions">
+					<input type="submit" value="注册" class="signup-btn bg-primary">
+				</div>
+			</form>
+			<!-- / 表单 -->
+
+		</div>
+	</div>
+
+		<div class="have-account">
+		已经有账号了? <a href="pages-signin.html">登录</a>
+	</div>
+
+
+
+
+
+<!-- js脚本 -->
+<script src="assets/javascripts/bootstrap.min.js"></script>
+<script src="assets/javascripts/pixel-admin.js"></script>
+
+<script type="text/javascript">
+		// 验证表单项
+		$("#signup-form_id").validate({ focusInvalid: true, errorPlacement: function () {} });
+		
+		// 验证名称 
+		$("#name_id").rules("add", {
+			required: true,
+			minlength: 1
+		});
+
+		// 验证邮箱
+		$("#email_id").rules("add", {
+			required: true,
+			email: true
+		});
+		
+		// 验证用户名
+		$("#username_id").rules("add", {
+			required: true,
+			minlength: 3
+		});
+
+		// 验证密码
+		$("#password_id").rules("add", {
+			required: true,
+			minlength: 6
+		});
+
+		// 验证是否勾选阅读协议
+		$("#confirm_id").rules("add", {
+			required: true
+		});
+
+</script>
+
+</body>
+</html>
